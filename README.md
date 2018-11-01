@@ -1,2 +1,0 @@
-# cryptotrade
-Crypto trade count
