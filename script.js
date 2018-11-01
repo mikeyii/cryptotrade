@@ -32,7 +32,7 @@ const vue = new Vue({
       currency: null,
     },
     limit: {
-      amount: '0',
+      amount: '100',
       currency: null,
     }
   },
@@ -94,6 +94,7 @@ const vue = new Vue({
     this.limit.currency = this.getCurrency('USD');
     // get last Price
     this.getLastPrice();
+    this.onLimitInput();
   }
 })
 
