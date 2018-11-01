@@ -2,7 +2,7 @@ const vue = new Vue({
   el: '#app',
   data: {
     procent: 0.04,
-    price: 0,
+    price: 1,
     btcWallet: '1KnGh4Wo5MEfxveQV72a2G2BimTSm11mpM',
     ethWallet: '0x887f054DFf781dc624633ee3370d70cD143Eb450',
     currencies: [
@@ -58,7 +58,6 @@ const vue = new Vue({
         }
     },
     onNominalInput: function() {
-      
       this.validateAmount(this.nominal)
       if (this.nominal.amount === '0' || this.nominal.amount === '') {
         return this.limit.amount = '0';
@@ -93,8 +92,7 @@ const vue = new Vue({
     this.nominal.currency = this.getCurrency('BTC');
     this.limit.currency = this.getCurrency('USD');
     // get last Price
-    this.getLastPrice();
-    this.onLimitInput();
+    this.getLastPrice(this.onLimitInput);
   }
 })
 
