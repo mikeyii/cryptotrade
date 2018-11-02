@@ -2,3 +2,9 @@ body {
   overflow-x: hidden;
   min-width: 320px;
 }
+
+.input-group-lg>.input-group-append>.input-group-text,
+.input-group-lg>.input-group-prepend>.input-group-text {
+  padding-left: 1rem;
+  padding-right: 1.5rem;
+}

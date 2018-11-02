@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8">
   <title>Crypto trade count</title>
@@ -8,14 +8,14 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container mt-4">
+  <div class="container pt-4">
     <h1 class="h2 text-center mb-4">Crypto trade count</h1>
     <div class="row justify-content-center">
       <div class="col-md-4 mt-4" id="app">
         Price: {{ price }}
         <form id="form">
-          <div class="input-group mb-3">
-            <input type="text" class="form-control" v-model="nominal.amount" v-on:input="onNominalInput()">
+          <div class="input-group input-group-lg mb-3">
+            <input type="number" class="form-control" v-model="nominal.amount" v-on:input="onNominalInput()">
             <div class="input-group-append">
               <select class="custom-select input-group-text" v-model="nominal.currency" v-on:change="getLastPrice(onNominalInput)">
                 <option v-for="currency in currencies" v-bind:value="currency" v-if="currency.type === 'crypto'">
@@ -24,7 +24,7 @@
               </select>
             </div>
           </div>
-          <div class="input-group mb-3">
+          <div class="input-group input-group-lg mb-3">
             <div class="input-group-prepend">
               <select class="custom-select input-group-text" v-model="limit.currency" v-on:change="getLastPrice(onLimitInput)">
                 <option v-for="currency in currencies" v-bind:value="currency" v-if="currency.type === 'fiat'">
@@ -32,7 +32,7 @@
                 </option>
               </select>
             </div>
-            <input type="text" class="form-control" v-model="limit.amount" v-on:input="onLimitInput()">
+            <input type="number" class="form-control" v-model="limit.amount" v-on:input="onLimitInput()">
           </div>
           <a href="#" class="btn btn-primary btn-block" v-if="nominal.currency === 'BTC' && nominal.amount">Buy</a>
           <div class="alert alert-secondary" v-if="nominal.currency === 'ETH'">{{ ethWallet }}</div>
